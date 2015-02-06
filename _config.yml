@@ -1,0 +1,10 @@
+# Site settings
+title: 시온고등학교 오픈소스 저장소
+email: 
+description: 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://zionhs.github.io" # the base hostname & protocol for your site
+github_username:  zionhs
+
+# Build settings
+markdown: kramdown
