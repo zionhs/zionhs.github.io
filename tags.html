@@ -1,0 +1,38 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Tags</h1>
+
+    {% for tag in site.tags %}
+                <a  href="#{{ tag | first }}" > 
+                    <p>/ {{ tag | first }} /</p></a>
+                {% endfor %}
+    
+    
+    {% for tag in site.tags %}
+  <h2 id="{{ tag | first }}">{{ tag | first }}</h2>
+                 <ul class="post-list">
+    {% for posts in tag %}
+      {% for post in posts %}
+                     <li>
+        <span class="post-meta">{{ post.date | date: "%Y.%m.%d" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+ 
+{% endfor %}
+
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
