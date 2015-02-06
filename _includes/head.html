@@ -6,7 +6,29 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="js/repo.js"></script>
+    <script>
+        function loadRepoData(){
+//Json 파일 읽기
+$.getJSON( '//api.github.com/users/zionhs/repos',{}, function( data ) {
+    var DataArray = data;
+    for(var i=0; i<DataArray; i++){
+        var url = DataArray[i].url;
+        var title = "<h1>"+DataArray[i].name+"</h1>";
+        var description = "<h2>"+DataArray[i].description+"</h2>";
+        var last_update = '<p><i class="fa fa-calendar"></i>'+DataArray[i].updated_at+'</p>';
+        var stars = '<p><i class="fa fa-star"></i>'+DataArray[i].stargazers_count+'</p>';
+        var forks = '<p><i class="fa fa-code-fork"></i>'+DataArray[i].forks_count+'</p>';
+        var issues = '<p><i class="fa fa-info-circle"></i>'+DataArray[i].open_issues_count+'</p>';
+        
+        var item = title + "<br>" + description + "<br>" + last_update + "<br>" + stars + " | " + forks + " | " + issues;
+        console.log(item);
+        $('#repo_list').append(item);
+    }
+
+ 
+});
+}
+    </script>
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />

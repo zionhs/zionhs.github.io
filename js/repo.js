@@ -12,6 +12,7 @@ $.getJSON( "https://api.github.com/users/zionhs/repos?callback=json", function( 
         var issues = '<p><i class="fa fa-info-circle"></i>'+DataArray[i].open_issues+'</p>';
         
         var item = title + "<br>" + description + "<br>" + last_update + "<br>" + stars + " | " + forks + " | " + issues;
+        console.log(item);
         $('#repo_list').append(item);
     }
 
