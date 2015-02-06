@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+시온고등학교 학생이나 선생님들에 의해 만들어지고 관리되는 오픈소스 소프트웨어들의 소스코드 저장소 입니다.
+GitHub 에서 소스코드가 관리되며, 이 사이트는 해당 소프트웨어에 대한 소식을 알리는 용도 정도입니다. 
+언제든지 기여를 받습니다. 기여를 하셔서 더 나은 소프트웨어를 만들어내는대 도움을 주소 싶다면, 언제든기 GitHub 를 통해 Pull Request 로 기여해 주세요.
